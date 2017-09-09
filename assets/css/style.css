@@ -1,0 +1,66 @@
+body, html {
+	margin: auto;
+	background-color: #999;
+	font-weight: bold;
+	font-size: 18px;
+	font-family: 'Georgia', Times, Times New Roman, serif;
+	line-height: 24px;
+}
+
+.animalButtons {
+	width: 100%;
+	min-height: 80px;
+	margin-bottom: 20px;
+}
+
+#animal-form {
+	float: right;
+	width: 25%;
+	height: 50px;
+}
+
+#animal-input {
+	width: 80%;
+}
+
+#addAnimal {
+	background-color: #434382;
+	color: white;
+	border-top-color: #656591;
+	border-left-color: #656591;
+	border-right-color: #29294F;
+	border-bottom-color: #29294F;
+	font-weight: bold;
+	font-size: 16px;
+	width: 100px;
+	margin-top: 5px;
+}
+
+#aButtons {
+	background-color: #434382;
+	color: white;
+	border-top-color: #656591;
+	border-left-color: #656591;
+	border-right-color: #29294F;
+	border-bottom-color: #29294F;
+	font-weight: bold;
+	font-size: 16px;
+	padding: 5px 15px 5px 15px;
+	margin: 5px 3px 5px 3px;
+}
+
+#animals {
+	float: left;
+	width: 70%;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.animalgif {
+	float:left;
+	padding-left: 15px;
+}
+
+@media screen and (max-width: 940px) {
+	
+}
