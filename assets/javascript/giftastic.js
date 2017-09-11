@@ -17,7 +17,7 @@ function renderButtons() {
 function displayAnimalGifs() {
 
 var animal = $(this).attr("data-name");
-var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q="+animal+"&g&limit=15&rating=g";
+var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q="+animal+"&g&limit=10&rating=g";
 $("#animals").empty();
 
 	$.ajax({
@@ -28,13 +28,13 @@ $("#animals").empty();
     for (i = 0; i < response.data.length; i++) {
     var animalDiv = $("<div class='animalgif'>");
 
-    var rating = response.data[i].rating;
-    var pRating = $("<p>").text("Rating: " + rating);
-    animalDiv.append(pRating);
-
     var gifURL = response.data[i].images.fixed_height_still.url;
     var gif = $("<img>").attr("src", gifURL);
     animalDiv.append(gif);
+
+    var rating = response.data[i].rating;
+    var pRating = $("<p>").text("Rating: " + rating);
+    animalDiv.append(pRating);
 
     $("#animals").append(animalDiv);
 	}
@@ -52,14 +52,15 @@ $("#addAnimal").on("click", function(event) {
 
 $(document).on("click", ".animalclick", displayAnimalGifs);
 
-//This function alters just one portion of the img src to swap it between a still gif and an animated one. Brilliant code.
+//This function alters just one portion of the img src link to swap it between a still gif and an animated one. 
+//Brilliant code.
 $(document).on("click", "img", function () {
     var src = $(this).attr("src");
-      if($(this).hasClass('playing')){
+      if($(this).hasClass("animated")){
          $(this).attr('src', src.replace(/\.gif/i, "_s.gif"))
-         $(this).removeClass('playing');
+         $(this).removeClass("animated");
       } else {
-        $(this).addClass('playing');
+        $(this).addClass("animated");
         $(this).attr('src', src.replace(/\_s.gif/i, ".gif"))
       }
 });
