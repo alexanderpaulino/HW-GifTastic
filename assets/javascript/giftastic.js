@@ -43,11 +43,13 @@ $("#animals").empty();
 
 $("#addAnimal").on("click", function(event) {
   	event.preventDefault();
-    var animal = $("#animal-input").val();
+    var animal = $("#animal-input").val().trim();
+    if (animal != "") {
     animals.push(animal);
     $("#animal-form")[0].reset();
     renderButtons();
-    });
+    }
+  });
 	
 
 $(document).on("click", ".animalclick", displayAnimalGifs);
